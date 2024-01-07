@@ -301,6 +301,7 @@ function addHost() {
   $('#continueAddHost').off('click');
   $('#continueAddHost').on('click', function() {
     var inputHost = $('#dialogInputHost').val();
+    inputHost = inputHost ? inputHost : '192.168.0.24';
     var _nvhttpHost = new NvHTTP(inputHost, myUniqueid, inputHost);
 
     _nvhttpHost.refreshServerInfoAtAddress(inputHost).then(function(success) {
